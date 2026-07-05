@@ -1,0 +1,26 @@
+import dotenv from "dotenv";
+dotenv.config();
+import express from "express"
+import cors from "cors";
+import userRouter from "./routes/user_router.js";
+import { ConnectDB } from "./utlis/ConnectDB.js";
+import chatRoute from "./routes/ChatRoute.js";
+
+const PORT = process.env.PORT || 5000;
+
+const app = express();
+app.use(express.json());
+app.use(cors({
+    origin:"http://localhost:5173",
+    optionsSuccessStatus:200,
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"] 
+}))
+
+app.use("/api/auth",userRouter);
+app.use("/api/auth",chatRoute)
+ConnectDB(
+    app.listen(PORT,()=>{
+    console.log("Server is running at port", PORT);
+})
+);
+
