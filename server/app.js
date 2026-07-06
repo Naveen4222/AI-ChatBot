@@ -5,8 +5,11 @@ import cors from "cors";
 import userRouter from "./routes/user_router.js";
 import { ConnectDB } from "./utlis/ConnectDB.js";
 import chatRoute from "./routes/ChatRoute.js";
+import dns from "dns";
 
 const PORT = process.env.PORT || 5000;
+
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 const app = express();
 app.use(express.json());
