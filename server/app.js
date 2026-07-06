@@ -14,7 +14,7 @@ dns.setServers(['8.8.8.8', '8.8.4.4']);
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://ai-chat-bot-s6gy.vercel.app/",
     optionsSuccessStatus:200,
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"] 
 }))
