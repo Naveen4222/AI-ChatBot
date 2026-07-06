@@ -20,7 +20,7 @@ export const Chat = () => {
 
             // 2. sending data to backend
 
-            const res = await fetch("https://ai-chatbot-zk7i.onrender.com", {
+            const res = await fetch("https://ai-chatbot-zk7i.onrender.com/api/auth/chat", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
